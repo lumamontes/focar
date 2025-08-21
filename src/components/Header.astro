@@ -1,0 +1,113 @@
+---
+import { Image } from 'astro:assets';
+import Focar from '../assets/focar.png';
+import LampImg from '../assets/lampada.png';
+---
+
+<header id="container">
+	<Image src={Focar} alt="Focar" />
+	<button class="help-button"
+		aria-label="Clique aqui para ajuda"
+	>
+		<Image role={'alert'} src={LampImg} alt="Ícone de ajuda" />
+	</button>
+
+	<div class="hidden dialog">
+		<p>
+			Bem vindo(a) ao pomodoro Focar!
+			Esse é um simples site de pomodoro que te ajuda a manter o foco e a produtividade.
+			Você pode:
+			<ul>
+				<li>Iniciar uma sessão de foco</li>
+				<li>Fazer uma pausa curta</li>
+				<li>Fazer uma pausa longa</li>
+			</ul>
+			Após cada sessão de foco, você pode escolher entre ir para a próxima etapa (uma pausa) ou reiniciar o ciclo de foco.
+			<br>
+			<br>
+			Atualmente o site não está responsivo (risos) então use no desktop ou em um dispositivo com tela grande!
+
+			Qualquer dúvida (ou bug) dê um grito pra <a href='https://bsky.app/profile/lumamontes.bsky.social'>luma no bluesky</a> e dê uma olhadinha <a href='https://github.com/lumamontes/focar'>no GitHub</a>.
+		</p>
+	</div>
+</header>
+
+<script>
+	const helpButtons = document.querySelectorAll('.help-button');
+
+	helpButtons.forEach((button) => {
+		button.addEventListener('click', () => {
+			const dialog = document.querySelector('.dialog');
+			dialog?.classList.toggle('hidden');
+		});
+	});
+</script>
+
+<style>
+	#container {
+    width: 100%;
+    margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+    padding-top: 1rem;
+	}
+
+	.help-button {
+		background: none;
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		transition: transform 0.2s ease;
+	}
+
+	.help-button:hover {
+		transform: scale(1.1);
+	}
+
+	.help-button:active {
+		transform: scale(0.95);
+	}
+
+	.hidden {
+		display: none;
+	}
+
+	.dialog {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: white;
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+		z-index: 1000;
+		max-width: 500px;
+		width: 90%;
+	}
+
+	.dialog p {
+		margin: 0 0 1rem 0;
+		line-height: 1.6;
+	}
+
+	.dialog ul {
+		margin: 1rem 0;
+		padding-left: 1.5rem;
+	}
+
+	.dialog li {
+		margin: 0.5rem 0;
+	}
+
+	.dialog a {
+		color: #6366f1;
+		text-decoration: none;
+	}
+
+	.dialog a:hover {
+		text-decoration: underline;
+	}
+</style>

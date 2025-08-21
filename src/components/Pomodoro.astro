@@ -1,0 +1,44 @@
+---
+import astroLogo from '../assets/astro.svg';
+import background from '../assets/background.svg';
+import { Countdown } from './Countdown';
+import { CountdownControls } from './CountdownControls';
+---
+
+<div id="container">
+	<main>
+		<section id="countdown">
+			<CountdownControls client:load>
+				<Countdown client:load />
+			</CountdownControls>
+		</section>
+	</main>
+</div>
+
+<script>
+  import { initializeCelebration } from '../utils/celebration';
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    initializeCelebration();
+  });
+</script>
+
+
+<style>
+
+	main {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	#countdown {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		max-width: 50%;
+		margin: 0 auto;
+		
+	}
+</style>

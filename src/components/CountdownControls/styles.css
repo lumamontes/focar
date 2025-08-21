@@ -1,0 +1,199 @@
+.controlsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    gap: 2rem;
+}
+
+.countdownContainer {
+    display: flex;
+    align-items: center;
+   	font-family: "Azeret Mono", monospace;
+    color: var(--title);
+}
+
+.countdownButton {
+    width: 100%;
+    height: 5rem;
+
+    margin-top: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 5px;
+
+    background: var(--blue);
+    
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.countdownButton:not(:disabled):hover {
+    background: var(--blue-dark);
+}
+
+.countdownButton:not(:disabled):hover {
+    transform: scale(1.05);
+}
+
+.countdownButtonActive {
+    background: var(--white);
+    color: var(--title);
+}
+
+.countdownButtonActive:not(:disabled):hover {
+    background: var(--red);
+    color: var(--white);
+}
+
+.countdownButton:disabled {
+    background:var(--white);
+    color: var(--text);
+    cursor: not-allowed;
+}
+
+.isFocused {
+    transform: scale(1.05);
+    background-color: azure;
+}
+
+.countdown-focus {
+    --mode-color: #f0f4ff;
+}
+
+.countdown-break {
+    --mode-color: #f0fdf4;
+}
+
+.countdown-long-break {
+    --mode-color: #fefbf3;
+}
+
+/* Mode info */
+.mode-info {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.mode-info h2 {
+    color: var(--mode-color, var(--blue));
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.mode-info p {
+    color: var(--text);
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Controls */
+.finished-controls,
+.timer-controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.resetCountdown {
+    background: var(--white);
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nextMode {
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    width: 100%;
+    color: var(--white);
+    font-weight: 600;
+    transition: all 0.2s ease;
+    background-color: transparent;
+   	font-family: "Azeret Mono", monospace;
+
+}
+
+.nextMode:hover {
+    transform: translateY(-2px);
+}
+
+.next-mode-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    border: 1px solid var(--mode-color, var(--blue));
+    padding: 0.5rem ;
+}
+
+.next-mode-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.next-mode-emoji {
+    font-size: 1.5rem;
+}
+
+.next-mode-title {
+}
+
+.next-mode-description {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.resetCountdown:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Mode selector */
+.mode-selector {
+    display: flex;
+    gap: 0.5rem;
+    background: var(--white);
+}
+
+.mode-selector button {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 0;
+    border-radius: 3px;
+    background: transparent;
+    color: var(--text);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mode-selector button:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.mode-selector button.active {
+    background: var(--mode-color, var(--blue));
+    color: var(--white);
+}
+
+.mode-selector button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

@@ -9,6 +9,18 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.13.2"
+    "@astrojs/react": "^4.3.0",
+    "@nanostores/react": "^1.0.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "astro": "^5.13.2",
+    "canvas-confetti": "^1.9.3",
+    "lucide-react": "^0.540.0",
+    "nanostores": "^1.0.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0"
   }
 }
