@@ -1,0 +1,28 @@
+---
+// JSON-LD Structured Data for Focar Pomodoro Timer
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Focar",
+  "description": "simples sitezito de pomodoro",
+  "url": "https://focar.netlify.app/",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Luma Montes",
+    "url": "https://bsky.app/profile/lumamontes.bsky.social"
+  },
+  "dateCreated": "2025-08-21",
+  "inLanguage": "pt-BR",
+  "keywords": "pomodoro, timer, foco, produtividade, concentração, gestão de tempo",
+  "screenshot": "https://focar.netlify.app/focar.png"
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

@@ -1,0 +1,24 @@
+{
+  "name": "Focar - Pomodoro Timer",
+  "short_name": "Focar",
+  "description": "simples sitezito de pomodoro",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/focar.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/focar.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "lang": "pt-BR"
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://focar.netlify.app/sitemap.xml
