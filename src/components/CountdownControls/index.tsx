@@ -1,11 +1,10 @@
 
 import { useStore } from '@nanostores/react';
+import { useEffect } from 'react';
 import './styles.css';
 import FocoImg from '../../assets/foco.png';
 import PausaImg from '../../assets/pausa.png';
 import PausaLongaImg from '../../assets/pausa-longa.png';
-import LampImg from '../../assets/lampada.png';
-import LampGif from '../../assets/selected-mode.gif';
 import IniciarImg from '../../assets/iniciar.png';
 import EncerradoImg from '../../assets/encerrado.png';
 import AbandonarImg from '../../assets/abandonar.png';
@@ -17,11 +16,15 @@ import {
   setMode,
   startCountdown,
   resetCountdown,
-  nextMode
+  nextMode,
+  initializeStore
 } from '../../stores/pomodoroStore';
 import { ArrowRight, RotateCcw } from 'lucide-react';
 
 export function CountdownControls({children}: {children: React.ReactNode}) {
+  useEffect(() => {
+    initializeStore();
+  }, []);
 
   const modeState = useStore($mode);
   const isActive = useStore($isActive);
@@ -94,7 +97,6 @@ export function CountdownControls({children}: {children: React.ReactNode}) {
         };
       }
     } else {
-      // After any break, go back to focus
       return {
         mode: 'focus',
         title: 'Foco',

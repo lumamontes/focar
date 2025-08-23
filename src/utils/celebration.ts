@@ -14,7 +14,7 @@ export function initializeCelebration() {
 export function playFinishSound() {
   if (finishAudio) {
     try {
-      finishAudio.currentTime = 0; // Reset to beginning
+      finishAudio.currentTime = 0;
       finishAudio.play().catch((error) => {
         console.warn('Could not play finish sound:', error);
       });
@@ -45,9 +45,6 @@ export function triggerConfetti() {
 }
 
 export function celebrate() {
-  // Play sound and show confetti
   playFinishSound();
   triggerConfetti();
-  
-  console.log('🎉 Session completed! Great job!');
 }
